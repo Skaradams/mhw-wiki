@@ -43,7 +43,7 @@ class Weapons extends Component {
 
   render() {
     return (
-      <div>
+      <div className='weapons'>
         { this.state.weapons && this.state.weapons.map(weapon => (
           <div key={ weapon.id } style={{ marginBottom: '3em' }} >
             <Weapon weapon={ weapon } />

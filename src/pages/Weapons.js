@@ -1,6 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
-import Weapon from '../components/Weapon'
+import WeaponThumb from '../components/WeaponThumb'
+import WeaponDetail from '../components/WeaponDetail'
 
 import axios from 'axios'
 
@@ -44,11 +45,16 @@ class Weapons extends Component {
   render() {
     return (
       <div className='weapons'>
-        { this.state.weapons && this.state.weapons.map(weapon => (
-          <div key={ weapon.id } style={{ marginBottom: '3em' }} >
-            <Weapon weapon={ weapon } />
-          </div>
-        ))}
+        <div className='weapons-pane'>
+          { this.state.weapons && this.state.weapons.map(weapon => (
+            <div key={ weapon.id } style={{ marginBottom: '3em' }} >
+            <WeaponThumb weapon={ weapon } />
+            </div>
+          ))}
+        </div>
+        <div className='selected-weapon-pane'>
+          <WeaponDetail weapon={ this.state.weapons }/>
+        </div>
       </div>
     )
   }

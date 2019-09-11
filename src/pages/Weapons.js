@@ -10,9 +10,12 @@ class Weapons extends Component {
   state = {}
   async componentDidMount() {
     const weapons = await axios.get('https://mhw-db.com/weapons?q={"type": "great-sword"}')
+    const weaponData = this.weaponHierarchy(weapons.data)
 
     this.setState({
-      weapons: this.weaponHierarchy(weapons.data)
+      weapons: weaponData,
+      selectedWeapon: weaponData[0]
+
     })
   }
 
@@ -53,7 +56,11 @@ class Weapons extends Component {
           ))}
         </div>
         <div className='selected-weapon-pane'>
-          <WeaponDetail weapon={ this.state.weapons }/>
+          {
+            this.state.selectedWeapon ?
+            <WeaponDetail weapon={ this.state.selectedWeapon }/> :
+            null
+          }
         </div>
       </div>
     )

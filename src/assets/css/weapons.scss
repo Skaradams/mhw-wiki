@@ -9,13 +9,20 @@
   }
   .weapon-thumb {
     img {
-      border: 1px solid #181b1e;
+      border: 2px solid #181b1e;
       width: 2.5em;
       height: 2.5em;
       margin-right: 0.5em;
       background: #030307;
       border-radius: 0.3em;
       cursor: pointer;
+      &:hover, &.active {
+        border: 2px solid white;
+      }
     }
   }
+}
+
+.weapon-detail {
+  background: rgba(255, 255, 255, 0.5);
 }

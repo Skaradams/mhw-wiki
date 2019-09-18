@@ -45,20 +45,30 @@ class Weapons extends Component {
     return result
   }
 
+  changeSelected = (weapon) => {
+    this.setState({
+      selectedWeapon: weapon
+    })
+  }
+
   render() {
     return (
       <div className='weapons'>
         <div className='weapons-pane'>
           { this.state.weapons && this.state.weapons.map(weapon => (
             <div key={ weapon.id } style={{ marginBottom: '3em' }} >
-            <WeaponThumb weapon={ weapon } />
+            <WeaponThumb
+              weapon={ weapon }
+              changeSelected={ this.changeSelected }
+              selectedWeapon={ this.state.selectedWeapon }
+            />
             </div>
           ))}
         </div>
         <div className='selected-weapon-pane'>
           {
             this.state.selectedWeapon ?
-            <WeaponDetail weapon={ this.state.selectedWeapon }/> :
+            <WeaponDetail weapon={ this.state.selectedWeapon } /> :
             null
           }
         </div>

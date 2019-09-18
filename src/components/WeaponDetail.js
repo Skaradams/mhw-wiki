@@ -1,4 +1,5 @@
 import React from 'react'
+import MaterialsList from './MaterialsList'
 
 const WeaponDetail = ({ weapon }) => (
   <div className="weapon-detail">
@@ -9,15 +10,8 @@ const WeaponDetail = ({ weapon }) => (
       <img src={ weapon.assets.image } />
     </div>
     <div className="weapon-upgrade-list" >
-      <ul>
-        { weapon.crafting.craftingMaterials.map(material => {
-          return (
-            <li key={material.item.id}>
-              { material.item.name } x { material.quantity }
-            </li>
-          )
-        })}
-      </ul>
+      <MaterialsList materials={ weapon.crafting.craftingMaterials } title="Craft" />
+      <MaterialsList materials={ weapon.crafting.upgradeMaterials } title="Upgrade" />
     </div>
   </div>
 )

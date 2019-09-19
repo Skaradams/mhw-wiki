@@ -1,7 +1,19 @@
-.weapons {
+.weapons-page {
   background: rgba(0,0,0,0.9);
   display: flex;
   flex-direction: row;
+  padding: 1em;
+  .weapon-types {
+    color: white;
+    padding-right: 0.5em;
+    .weapon-type {
+      cursor: pointer;
+      &:hover {
+        color: black;
+        background: white; 
+      }
+    }
+  }
   .weapon-family {
     display: flex;
     flex-direction: row;

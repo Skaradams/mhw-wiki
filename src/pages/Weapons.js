@@ -2,9 +2,9 @@ import React from 'react'
 import { Component } from 'react'
 import WeaponThumb from '../components/WeaponThumb'
 import WeaponDetail from '../components/WeaponDetail'
+import weaponTypesMapping from '../components/weaponTypesMapping'
 
 import axios from 'axios'
-
 
 class Weapons extends Component {
   state = {}
@@ -14,7 +14,8 @@ class Weapons extends Component {
     const weaponTypes = await axios.get('https://mhw-db.com/weapons?p={"type": true}');
     const uniqueTypes = weaponTypes.data
       .map(weapon => weapon.type)
-      .reduce((unique, weapon) => unique.includes(weapon) ? unique : [...unique, weapon], [] );
+      .reduce((unique, type) => unique.includes(type) ? unique : [...unique, type], [] );
+
     const selectedType = uniqueTypes[0];
     const weapons = await this.getWeapons(selectedType);
 
@@ -77,8 +78,8 @@ class Weapons extends Component {
       <div className='weapons-page'>
         <div className="weapon-types">
           { this.state.weaponTypes && this.state.weaponTypes.map(type => (
-            <div className="weapon-type" onClick={ () => this.refreshWeapons(type) }>
-              { type }
+            <div className="weapon-type" key={ type } onClick={ () => this.refreshWeapons(type) }>
+              { weaponTypesMapping[type] }
             </div>
           )) }
         </div>

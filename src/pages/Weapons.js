@@ -82,23 +82,25 @@ class Weapons extends Component {
             </div>
           )) }
         </div>
-        <div className='weapons-pane'>
-          { this.state.weapons && this.state.weapons.map(weapon => (
-            <div key={ weapon.id } style={{ marginBottom: '3em' }} >
-            <WeaponThumb
-              weapon={ weapon }
-              changeSelected={ this.changeSelected }
-              selectedWeapon={ this.state.selectedWeapon }
-            />
+        <div className="weapons-page-wrapper">
+          <div className='weapons-pane'>
+            { this.state.weapons && this.state.weapons.map(weapon => (
+              <div key={ weapon.id } style={{ marginBottom: '3em' }} >
+                <WeaponThumb
+                  weapon={ weapon }
+                  changeSelected={ this.changeSelected }
+                  selectedWeapon={ this.state.selectedWeapon }
+                  />
+              </div>
+            ))}
+          </div>
+          <div className='selected-weapon-pane'>
+            {
+              this.state.selectedWeapon ?
+              <WeaponDetail weapon={ this.state.selectedWeapon } /> :
+                null
+              }
             </div>
-          ))}
-        </div>
-        <div className='selected-weapon-pane'>
-          {
-            this.state.selectedWeapon ?
-            <WeaponDetail weapon={ this.state.selectedWeapon } /> :
-            null
-          }
         </div>
       </div>
     )

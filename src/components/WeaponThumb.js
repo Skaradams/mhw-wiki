@@ -8,7 +8,8 @@ const WeaponThumb = ({ weapon, changeSelected, selectedWeapon }) => (
     >
       <img
         src={ weapon.assets && weapon.assets.icon }
-        className={ (selectedWeapon === weapon ? 'active' : '') } />
+        className={ (selectedWeapon === weapon ? 'active' : '') }
+      />
     </div>
     <div>
       { weapon.children && weapon.children.map(child => {

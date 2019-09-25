@@ -3,8 +3,7 @@
   background: url('../images/mhw-forge.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: row;
+
   .weapons-page-wrapper {
     padding: 1em;
     display: flex;
@@ -21,6 +20,8 @@
   .weapon-types {
     background: black;
     color: white;
+    display: flex;
+    flex-direction: row;
     .weapon-type {
       cursor: pointer;
       padding: 0.2em 0.5em;

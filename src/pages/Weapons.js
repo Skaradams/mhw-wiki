@@ -78,7 +78,11 @@ class Weapons extends Component {
       <div className='weapons-page'>
         <div className="weapon-types">
           { this.state.weaponTypes && this.state.weaponTypes.map(type => (
-            <div className="weapon-type" key={ type } onClick={ () => this.refreshWeapons(type) }>
+            <div
+              className={`weapon-type ${this.state.selectedType === type ? "active" : ""}`}
+              key={ type }
+              onClick={ () => this.refreshWeapons(type) }
+            >
               { weaponTypesMapping[type] }
             </div>
           )) }
@@ -99,9 +103,9 @@ class Weapons extends Component {
             {
               this.state.selectedWeapon ?
               <WeaponDetail weapon={ this.state.selectedWeapon } /> :
-                null
-              }
-            </div>
+              null
+            }
+          </div>
         </div>
       </div>
     )

@@ -25,7 +25,7 @@
       cursor: pointer;
       padding: 0.2em 0.5em;
       font-size: 1.2em;
-      &:hover {
+      &:hover, &.active {
         color: black;
         background: white;
       }

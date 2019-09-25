@@ -7,7 +7,7 @@ const WeaponThumb = ({ weapon, changeSelected, selectedWeapon }) => (
       onClick={ () => { changeSelected(weapon) } }
     >
       <img
-        src={ weapon.assets.icon }
+        src={ weapon.assets && weapon.assets.icon }
         className={ (selectedWeapon === weapon ? 'active' : '') } />
     </div>
     <div>

@@ -3,6 +3,7 @@ import { Component } from 'react'
 import WeaponThumb from '../components/WeaponThumb'
 import WeaponDetail from '../components/WeaponDetail'
 import weaponTypesMapping from '../components/weaponTypesMapping'
+import importAllFiles from '../utils/importAllFiles'
 
 import axios from 'axios'
 
@@ -12,6 +13,7 @@ class Weapons extends Component {
     // const weapons = await axios.get('https://mhw-db.com/weapons?q={"type": "great-sword"}')
     // const weaponData = this.weaponHierarchy(weapons.data)
     const weaponTypes = await axios.get('https://mhw-db.com/weapons?p={"type": true}');
+
     const uniqueTypes = weaponTypes.data
       .map(weapon => weapon.type)
       .reduce((unique, type) => unique.includes(type) ? unique : [...unique, type], [] );
@@ -74,6 +76,10 @@ class Weapons extends Component {
   }
 
   render() {
+    const typeImages = importAllFiles(
+      require.context('../assets/images/weaponTypes', false, /.png/)
+    );
+    console.log(typeImages);
     return (
       <div className='weapons-page'>
         <div className="weapon-types">
@@ -83,7 +89,11 @@ class Weapons extends Component {
               key={ type }
               onClick={ () => this.refreshWeapons(type) }
             >
-              { weaponTypesMapping[type] }
+              <img
+                key={type}
+                src={ typeImages[`icon-${type}.png`] }
+                alt={ weaponTypesMapping[type] }
+              />
             </div>
           )) }
         </div>

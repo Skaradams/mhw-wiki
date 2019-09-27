@@ -10,7 +10,7 @@ class App extends Component {
       <div className="mhw-app">
         <Router>
           <Redirect exact from="/" to="weapons" />
-        <Route path='/weapons' exact component={ Weapons } />
+          <Route path='/weapons' exact component={ Weapons } />
         </Router>
       </div>
     );

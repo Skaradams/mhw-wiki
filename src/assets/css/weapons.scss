@@ -18,16 +18,20 @@
 
   }
   .weapon-types {
-    background: black;
+    background: #333;
     color: white;
     display: flex;
     flex-direction: row;
+    box-shadow: 3px 4px 6px -1px rgba(0,0,0,0.65);
     .weapon-type {
       cursor: pointer;
       padding: 0.2em 0.5em;
       font-size: 1.2em;
+      img {
+        width: 2em;
+      }
       &:hover, &.active {
-        color: black;
+        color: #333;
         background: white;
       }
     }

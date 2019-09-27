@@ -4,6 +4,9 @@ import WeaponThumb from '../components/WeaponThumb'
 import WeaponDetail from '../components/WeaponDetail'
 import weaponTypesMapping from '../components/weaponTypesMapping'
 import importAllFiles from '../utils/importAllFiles'
+import {
+  Tooltip
+} from 'react-tippy';
 
 import axios from 'axios'
 
@@ -79,22 +82,28 @@ class Weapons extends Component {
     const typeImages = importAllFiles(
       require.context('../assets/images/weaponTypes', false, /.png/)
     );
-    console.log(typeImages);
     return (
       <div className='weapons-page'>
         <div className="weapon-types">
           { this.state.weaponTypes && this.state.weaponTypes.map(type => (
-            <div
-              className={`weapon-type ${this.state.selectedType === type ? "active" : ""}`}
+            <Tooltip
               key={ type }
-              onClick={ () => this.refreshWeapons(type) }
+              arrow="true"
+              title={ weaponTypesMapping[type] }
+              position="bottom"
+              size="big"
+              theme="light"
             >
-              <img
-                key={type}
-                src={ typeImages[`icon-${type}.png`] }
-                alt={ weaponTypesMapping[type] }
-              />
-            </div>
+              <div
+                className={`weapon-type ${this.state.selectedType === type ? "active" : ""}`}
+                onClick={ () => this.refreshWeapons(type) }
+                >
+                  <img
+                    src={ typeImages[`icon-${type}.png`] }
+                    alt={ weaponTypesMapping[type] }
+                  />
+                </div>
+            </Tooltip>
           )) }
         </div>
         <div className="weapons-page-wrapper">

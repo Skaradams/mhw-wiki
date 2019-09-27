@@ -18,7 +18,7 @@
 
   }
   .weapon-types {
-    background: #333;
+    background: #111;
     color: white;
     display: flex;
     flex-direction: row;
@@ -31,7 +31,7 @@
         width: 2em;
       }
       &:hover, &.active {
-        color: #333;
+        color: #222;
         background: white;
       }
     }

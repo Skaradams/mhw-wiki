@@ -13,8 +13,6 @@ import axios from 'axios'
 class Weapons extends Component {
   state = {}
   async componentDidMount() {
-    // const weapons = await axios.get('https://mhw-db.com/weapons?q={"type": "great-sword"}')
-    // const weaponData = this.weaponHierarchy(weapons.data)
     const weaponTypes = await axios.get('https://mhw-db.com/weapons?p={"type": true}');
 
     const uniqueTypes = weaponTypes.data

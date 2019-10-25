@@ -5,9 +5,23 @@
     flex: none;
     display: flex;
     flex-direction: column;
-
+    box-shadow: 3px 4px 6px -1px rgba(0,0,0,0.65);
+    z-index: 1;
+    .main-logo {
+      width: 5em;
+      margin: auto;
+      margin-top: 1em;
+      margin-bottom: 1.5em;
+    }
     .menu-item {
-      padding: 0.2em 0.5em
+      padding: 0.2em 1em;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: #333;
+      &:hover {
+        background: #333;
+        color: white;
+      }
     }
   }
   .content-wrapper {

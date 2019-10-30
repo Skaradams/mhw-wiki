@@ -2,12 +2,23 @@ import React from 'react'
 import { Component } from 'react'
 import axios from 'axios'
 
+import headIcon from '../assets/images/armorPieces/head.png';
+import chestIcon from '../assets/images/armorPieces/chest.png';
+import glovesIcon from '../assets/images/armorPieces/gloves.png';
+import legsIcon from '../assets/images/armorPieces/legs.png';
+import waistIcon from '../assets/images/armorPieces/waist.png';
 import ItemThumb from '../components/ItemThumb';
 
 class Armors extends Component {
   RANK_LOW = 'low';
   RANK_HIGH = 'high';
-
+  ICONS = {
+    head: headIcon,
+    chest: chestIcon,
+    gloves: glovesIcon,
+    legs: legsIcon,
+    waist: waistIcon
+  }
   state = {
     rank: this.RANK_LOW
   }
@@ -38,7 +49,7 @@ class Armors extends Component {
                     item={ piece }
                     changeSelected={ this.changeSelected }
                     selectedItem={ this.state.selectedArmor }
-                    
+                    icon={ this.ICONS[piece.type] }
                   />
                 )) }
               </div>

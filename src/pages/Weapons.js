@@ -1,6 +1,6 @@
 import React from 'react'
 import { Component } from 'react'
-import WeaponThumb from '../components/WeaponThumb'
+import WeaponThumbTree from '../components/WeaponThumbTree'
 import WeaponDetail from '../components/WeaponDetail'
 import weaponTypesMapping from '../components/weaponTypesMapping'
 import importAllFiles from '../utils/importAllFiles'
@@ -108,7 +108,7 @@ class Weapons extends Component {
           <div className='weapons-pane'>
             { this.state.weapons && this.state.weapons.map(weapon => (
               <div key={ weapon.id } style={{ marginBottom: '3em' }} >
-                <WeaponThumb
+                <WeaponThumbTree
                   weapon={ weapon }
                   changeSelected={ this.changeSelected }
                   selectedWeapon={ this.state.selectedWeapon }

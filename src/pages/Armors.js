@@ -2,6 +2,8 @@ import React from 'react'
 import { Component } from 'react'
 import axios from 'axios'
 
+import ItemThumb from '../components/ItemThumb';
+
 class Armors extends Component {
   RANK_LOW = 'low';
   RANK_HIGH = 'high';
@@ -16,7 +18,11 @@ class Armors extends Component {
 
     this.setState({
       armorSets: armorSets.data,
+      selectedArmor: armorSets[0]
     })
+  }
+  changeSelected = () => {
+
   }
 
   render() {
@@ -27,9 +33,13 @@ class Armors extends Component {
               { set.name }
               <div className="armor-pieces">
                 { set.pieces && set.pieces.map(piece => (
-                  <div key={ piece.id }>
-                    { piece.name }
-                  </div>
+                  <ItemThumb
+                    key={ piece.id }
+                    item={ piece }
+                    changeSelected={ this.changeSelected }
+                    selectedItem={ this.state.selectedArmor }
+                    
+                  />
                 )) }
               </div>
             </div>

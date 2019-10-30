@@ -29,10 +29,10 @@
     width: 100vw;
     height: 100vh;
     background-attachment: fixed;
-    background: rgba(0,0,0,0.9);
-    background: url('../images/mhw-forge.jpg');
+    background: url('../images/mhw-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     overflow: scroll;
+    position: relative;
   }
 }

@@ -1,0 +1,12 @@
+.box {
+  border-radius: 1em;
+  margin-right: 2em;
+  padding: 0.5em;
+  box-shadow: 3px 4px 6px -1px rgba(0,0,0,0.65);
+}
+
+.page-wrapper {
+  padding: 4em 1em;
+  display: flex;
+  flex-direction: row;
+}

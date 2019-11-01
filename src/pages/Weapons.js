@@ -104,8 +104,8 @@ class Weapons extends Component {
             </Tooltip>
           )) }
         </div>
-        <div className="weapons-page-wrapper">
-          <div className='weapons-pane'>
+        <div className="page-wrapper">
+          <div className='weapons-pane box'>
             { this.state.weapons && this.state.weapons.map(weapon => (
               <div key={ weapon.id } style={{ marginBottom: '3em' }} >
                 <WeaponThumbTree

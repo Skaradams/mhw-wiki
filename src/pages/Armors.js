@@ -38,24 +38,27 @@ class Armors extends Component {
 
   render() {
     return (
-      <div className="armors-page">
-        { this.state.armorSets && this.state.armorSets.map(set => (
+      <div className="armors-page page-wrapper">
+        <div className="box armors-wrapper">
+          { this.state.armorSets && this.state.armorSets.map(set => (
             <div className="armor-set" key={ set.id }>
-              { set.name }
+              <div className="armor-set-name">
+                { set.name }
+              </div>
               <div className="armor-pieces">
-                { set.pieces && set.pieces.map(piece => (
-                  <ItemThumb
-                    key={ piece.id }
-                    item={ piece }
-                    changeSelected={ this.changeSelected }
-                    selectedItem={ this.state.selectedArmor }
-                    icon={ this.ICONS[piece.type] }
-                  />
-                )) }
+                  { set.pieces && set.pieces.map(piece => (
+                    <ItemThumb
+                      key={ piece.id }
+                      item={ piece }
+                      changeSelected={ this.changeSelected }
+                      selectedItem={ this.state.selectedArmor }
+                      icon={ this.ICONS[piece.type] }
+                    />
+                  )) }
               </div>
             </div>
-          )
-        )}
+          ))}
+        </div>
       </div>
     )
   }

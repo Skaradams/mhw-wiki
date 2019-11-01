@@ -1,4 +1,19 @@
-.armor-pieces {
+.armors-wrapper {
+  background: rgba(0,0,0,0.7);
+}
+.armor-set {
   display: flex;
   flex-direction: row;
+  .armor-set-name {
+    width: 8em;
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .armor-pieces {
+    display: flex;
+    flex-direction: row;
+  }
 }

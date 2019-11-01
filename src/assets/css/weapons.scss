@@ -1,15 +1,6 @@
 .weapons-page {
-  .weapons-page-wrapper {
-    padding: 4em 1em;
-    display: flex;
-    flex-direction: row;
-  }
   .weapons-pane {
     background: rgba(0,0,0,0.7);
-    border-radius: 1em;
-    margin-right: 2em;
-    padding: 0.5em;
-    box-shadow: 3px 4px 6px -1px rgba(0,0,0,0.65);
   }
   .weapon-types {
     position: fixed;
@@ -36,18 +27,18 @@
     display: flex;
     flex-direction: row;
   }
-  .item-thumb {
-    img {
-      border: 2px solid #181b1e;
-      width: 2.5em;
-      height: 2.5em;
-      margin-right: 0.5em;
-      background: #030307;
-      border-radius: 0.3em;
-      cursor: pointer;
-      &:hover, &.active {
-        border: 2px solid white;
-      }
+}
+.item-thumb {
+  img {
+    border: 2px solid #181b1e;
+    width: 2.5em;
+    height: 2.5em;
+    margin-right: 0.5em;
+    background: #030307;
+    border-radius: 0.3em;
+    cursor: pointer;
+    &:hover, &.active {
+      border: 2px solid white;
     }
   }
 }

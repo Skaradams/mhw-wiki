@@ -8,6 +8,7 @@ import glovesIcon from '../assets/images/armorPieces/gloves.png';
 import legsIcon from '../assets/images/armorPieces/legs.png';
 import waistIcon from '../assets/images/armorPieces/waist.png';
 import ItemThumb from '../components/ItemThumb';
+import ArmorDetail from '../components/ArmorDetail';
 
 class Armors extends Component {
   RANK_LOW = 'low';
@@ -29,11 +30,13 @@ class Armors extends Component {
 
     this.setState({
       armorSets: armorSets.data,
-      selectedArmor: armorSets[0]
+      selectedArmor: armorSets.data[0].pieces[0]
     })
   }
-  changeSelected = () => {
-
+  changeSelected = armor => {
+    this.setState({
+      selectedArmor: armor
+    })
   }
 
   render() {
@@ -59,6 +62,10 @@ class Armors extends Component {
             </div>
           ))}
         </div>
+        {
+          this.state.selectedArmor &&
+          <ArmorDetail armor={ this.state.selectedArmor } />
+        }
       </div>
     )
   }

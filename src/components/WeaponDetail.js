@@ -2,7 +2,7 @@ import React from 'react'
 import MaterialsList from './MaterialsList'
 
 const WeaponDetail = ({ weapon }) => (
-  <div className="weapon-detail">
+  <div className="weapon-detail box">
     <div className="weapon-name">
       { weapon.name }
     </div>
@@ -16,4 +16,4 @@ const WeaponDetail = ({ weapon }) => (
   </div>
 )
 
-export default WeaponDetail
+export default WeaponDetail;

@@ -82,7 +82,7 @@ class Weapons extends Component {
     );
     return (
       <div className='weapons-page'>
-        <div className="weapon-types">
+        <div className="weapon-types top-bar">
           { this.state.weaponTypes && this.state.weaponTypes.map(type => (
             <Tooltip
               key={ type }
@@ -118,9 +118,8 @@ class Weapons extends Component {
           </div>
           <div className='selected-weapon-pane'>
             {
-              this.state.selectedWeapon ?
-              <WeaponDetail weapon={ this.state.selectedWeapon } /> :
-              null
+              this.state.selectedWeapon &&
+              <WeaponDetail weapon={ this.state.selectedWeapon } />
             }
           </div>
         </div>

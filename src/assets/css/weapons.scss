@@ -35,17 +35,6 @@
     }
   }
 }
-.selected-weapon-pane {
+.selected-item-pane {
   position: relative;
-}
-.weapon-detail {
-  position: fixed;
-  background: rgba(1, 11, 1, 0.5);
-  color: white;
-  .weapon-picture {
-    img {
-      background: black;
-      border-radius: 1em;
-    }
-  }
 }

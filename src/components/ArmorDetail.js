@@ -1,11 +1,11 @@
 import React from 'react'
 
 const ArmorDetail = ({ armor }) => (
-  <div className="armor-detail box">
-    <div className="armor-name">
+  <div className="item-detail box">
+    <div className="item-title">
       { armor.name }
     </div>
-    <div className="armor-picture">
+    <div className="item-picture">
       <img src={ armor.assets.imageMale } />
     </div>
   </div>

@@ -62,10 +62,12 @@ class Armors extends Component {
             </div>
           ))}
         </div>
-        {
-          this.state.selectedArmor &&
-          <ArmorDetail armor={ this.state.selectedArmor } />
-        }
+        <div className='selected-item-pane'>
+          {
+            this.state.selectedArmor &&
+            <ArmorDetail armor={ this.state.selectedArmor } />
+          }
+        </div>
       </div>
     )
   }

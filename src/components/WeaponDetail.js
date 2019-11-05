@@ -2,14 +2,14 @@ import React from 'react'
 import MaterialsList from './MaterialsList'
 
 const WeaponDetail = ({ weapon }) => (
-  <div className="weapon-detail box">
-    <div className="weapon-name">
+  <div className="item-detail box">
+    <div className="item-title">
       { weapon.name }
     </div>
-    <div className="weapon-picture">
+    <div className="item-picture">
       <img src={ weapon.assets.image } />
     </div>
-    <div className="weapon-upgrade-list" >
+    <div className="item-upgrade-list" >
       <MaterialsList materials={ weapon.crafting.craftingMaterials } title="Craft" />
       <MaterialsList materials={ weapon.crafting.upgradeMaterials } title="Upgrade" />
     </div>

@@ -116,7 +116,7 @@ class Weapons extends Component {
               </div>
             ))}
           </div>
-          <div className='selected-weapon-pane'>
+          <div className='selected-item-pane'>
             {
               this.state.selectedWeapon &&
               <WeaponDetail weapon={ this.state.selectedWeapon } />

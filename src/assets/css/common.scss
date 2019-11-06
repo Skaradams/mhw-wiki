@@ -2,8 +2,47 @@ body {
   font-family: 'Open sans';
 }
 
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.2em;
+  font-family: 'Goblin hand';
+}
+
+h2 {
+  font-size: 1.4em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+ul {
+  padding: 0;
+}
+.row, .column {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+  &> * {
+    flex-grow: 1;
+  }
+}
+
+.column {
+  flex-direction: column;
+}
+
+.no-flex {
+  flex: none;
+}
+
 .box {
-  border-radius: 1em;
+  border-radius: 0.5em;
   margin-right: 2em;
   padding: 0.5em;
   box-shadow: 3px 4px 6px -1px rgba(0,0,0,0.65);
@@ -37,7 +76,6 @@ body {
   .item-picture {
     width: 100%;
     background: rgba(1, 11, 1, 0.9);
-    filter: blur(1px);
     border-radius: 1em;
     display: flex;
     align-items: center;
@@ -45,6 +83,26 @@ body {
     img {
       width: auto;
       margin: auto;
+    }
+  }
+  .item-upgrade-list {
+    margin-top: 1em;
+    background: rgba(1, 11, 1, 0.3);
+    border-radius: 0.2em;
+    padding: 0.5em;
+    ul {
+      li {
+        padding: 0.2em 0.4em;
+        &:nth-child(odd) {
+          background: rgba(1, 11, 1, 0.5);
+        }
+        &:nth-child(even) {
+          background: rgba(1, 11, 1, 0.9);
+        }
+        .item-name {
+          padding-right: 0.2em;
+        }
+      }
     }
   }
 }
